@@ -20,25 +20,6 @@
       </nav>
     </header>
   </div>
-  <nav class="navbar navbar-lingt">
-    <div class="container-fluid">
-
-      <nav class="navbar navbar-expand-lg" style="background-color: gold">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-3 mb-lg-8">
-            <li class="nav-item"><a class="nav-link action" href="#">central</a></li>
-          </ul>
-          <div class="dropdown">
-            <a class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-br-toggle="dropdown" aria-expanded="false">Perfil</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Editar Conta</a></li>
-              <li><a class="dropdown-item" href="#">Sair</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </nav>
 <?php } else { ?>
   <nav class="navbar navbar-lingt" style="background-color:gold">
     <div class="container-fluid">
