@@ -24,51 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categoria`
---
-
-DROP TABLE IF EXISTS `categoria`;
-CREATE TABLE IF NOT EXISTS `categoria` (
-  `contratoEmpresarial` varchar(255) NOT NULL,
-  `direitoArea` varchar(255) NOT NULL,
-  `etica` varchar(255) NOT NULL,
-  `estatutoCriAdo` varchar(255) NOT NULL,
-  `processo` varchar(255) NOT NULL,
-  `modelo` varchar(255) NOT NULL,
-  `id_categoria` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id_categoria`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `documento`
 --
 
 DROP TABLE IF EXISTS `documento`;
 CREATE TABLE IF NOT EXISTS `documento` (
   `id_documento` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) NOT NULL,
   `titulo` varchar(255) NOT NULL,
   `categoria` varchar(255) NOT NULL,
   `autor` varchar(255) NOT NULL,
   `descricao` varchar(255) NOT NULL,
   `arquivo` varchar(255) NOT NULL,
-  PRIMARY KEY (`id_documento`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `processo`
---
-
-DROP TABLE IF EXISTS `processo`;
-CREATE TABLE IF NOT EXISTS `processo` (
-  `PCivil` varchar(255) NOT NULL,
-  `PTrabalho` varchar(255) NOT NULL,
-  `PPenal` varchar(255) NOT NULL,
-  `PEmpresarial` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id_documento`),
+  KEY `id_usuario` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -84,7 +54,24 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nome`, `cpf`, `email`, `senha`) VALUES
+(1, 'Tina', '07789012053', 'tina716@gmail.com', '$2y$10$Y/ztF5t73XdWYsSYSqZ4O.03GDqq2lEUAoVykKbixro6EUnPDN142');
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `documento`
+--
+ALTER TABLE `documento`
+  ADD CONSTRAINT `documento_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
