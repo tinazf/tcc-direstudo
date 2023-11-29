@@ -9,7 +9,7 @@ function conectar(){
     if($conexao){
         return $conexao;
     }else{
-        echo "erro ao conectar".mysqli_connect_error();
+        echo "erro ao conectar" . mysqli_connect_error();
     }
 }
 

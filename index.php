@@ -2,6 +2,9 @@
 session_start();
 require_once "conexao.php";
 $conecta = conectar();
+
+if (isset($_POST['buscar'])) {
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,11 +34,10 @@ $conecta = conectar();
 
 <body>
   <?php require_once "cabecalho.php"; ?>
-  <br><br>
-  <figure>
-    <div class="container">
+  <div class="container">
+    <div class="row m-4">
       <div class="float-left">
-        <form method="GET" class="form-inline">
+        <form method="POST" action="<?= $_SERVER['PHP_SELF']; ?>" class="form-inline">
           <div class="input-group mt-3 mx-auto shadow" style="width: 35%;">
             <input class="form-control text-center" name="barra" type="search" aria-label="Search" id="categoria" placeholder="Pesquise por uma categoria">
             <div class="input-group-append">
@@ -48,97 +50,101 @@ $conecta = conectar();
           </div>
         </form>
       </div>
-      <div class="row py-3">
-        <div class="col-xl-3">
-          <div class="card">
-            <a href="" class="btn btn-sucess">
-              <img class="card-img-top" src="assets/book.png" alt="imagem book">
-              <div class="card-body">
-                <h5 class="card-title">Contrato Empresarial</h5>
-                <p class="card-text"> Neste campo são encontrados livros, bibliografias... </p>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3">
-          <div class="card">
-            <a href="" class="btn btn-sucess">
-              <img class="card-img-top" src="assets/book.png" alt="imagem book">
-              <div class="card-body">
-                <h5 class="card-title">Direito</h5>
-                <p class="card-text"> Neste campo são encontrados livros, bibliografias... </p>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3">
-          <div class="card" style="width: 13rem;">
-            <a href="" class="btn btn-sucess">
-              <img class="card-img-top" src="assets/book.png" alt="imagem book">
-              <div class="card-body">
-                <h5 class="card-title">Ética</h5>
-                <p class="card-text"> Neste campo são encontrados livros, bibliografias... </p>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3">
-          <div class="card" style="width: 13rem;">
-            <a href="" class="btn btn-sucess">
-              <img class="card-img-top" src="assets/book.png" alt="imagem book">
-              <div class="card-body">
-                <h5 class="card-title">Estatuto da Criança e Adolescente</h5>
-                <p class="card-text"> Neste campo são encontrados livros, bibliografias... </p>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xl-3">
-          <div class="card" style="width: 13rem;">
-            <a href="" class="btn btn-sucess">
-              <img class="card-img-top" src="assets/book.png" alt="imagem book">
-              <div class="card-body">
-                <h5 class="card-title">Processo Civil</h5>
-                <p class="card-text"> Neste campo são encontrados livros, bibliografias... </p>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3">
-          <div class="card" style="width: 13rem;">
-            <a href="" class="btn btn-sucess">
-              <img class="card-img-top" src="assets/book.png" alt="imagem book">
-              <div class="card-body">
-                <h5 class="card-title">Processo Trabalho</h5>
-                <p class="card-text"> Neste campo são encontrados livros, bibliografias... </p>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3">
-          <div class="card" style="width: 13rem;">
-            <a href="" class="btn btn-sucess">
-              <img class="card-img-top" src="assets/book.png" alt="imagem book">
-              <div class="card-body">
-                <h5 class="card-title">Processo Penal</h5>
-                <p class="card-text"> Neste campo são encontrados livros, bibliografias... </p>
-            </a>
-          </div>
+    </div>
+    <div class="row py-2">
+      <div class="col-xl-3">
+        <div class="card ms-5" style="width: 13rem;">
+          <a href="" class="link-body-emphasis text-dark text-decoration-none">
+            <img src="assets/book.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Contrato Empresarial</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </a>
         </div>
       </div>
       <div class="col-xl-3">
-        <div class="card" style="width: 13rem;">
-          <a href="" class="btn btn-sucess">
-            <img class="card-img-top" src="assets/book.png" alt="imagem book">
-            <div class="card-body">
-              <h5 class="card-title">Processo Empresarial</h5>
-              <p class="card-text"> Neste campo são encontrados livros, bibliografias... </p>
+        <div class="card ms-5" style="width: 13rem;">
+          <a href="" class="link-body-emphasis text-dark text-decoration-none">
+            <img src="assets/book.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Contrato Empresarial</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="card ms-5" style="width: 13rem;">
+          <a href="" class="link-body-emphasis text-dark text-decoration-none">
+            <img src="assets/book.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Contrato Empresarial</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="card ms-5" style="width: 13rem;">
+          <a href="" class="link-body-emphasis text-dark text-decoration-none">
+            <img src="assets/book.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Contrato Empresarial</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
           </a>
         </div>
       </div>
     </div>
-  </figure>
-  <footer class="footer fixed-bottom py-3 bg-warning">
-    <div class="container text-light">
-      <span class="text-muted">© 2023.Direstudo</span>
+    <div class="row p-2">
+      <div class="col-xl-3">
+        <div class="card ms-5" style="width: 13rem;">
+          <a href="" class="link-body-emphasis text-dark text-decoration-none">
+            <img src="assets/book.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Contrato Empresarial</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="card ms-5" style="width: 13rem;">
+          <a href="" class="link-body-emphasis text-dark text-decoration-none">
+            <img src="assets/book.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Contrato Empresarial</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="card ms-5" style="width: 13rem;">
+          <a href="" class="link-body-emphasis text-dark text-decoration-none">
+            <img src="assets/book.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Contrato Empresarial</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="card ms-5" style="width: 13rem;">
+          <a href="" class="link-body-emphasis text-dark text-decoration-none">
+            <img src="assets/book.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Contrato Empresarial</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
-  </footer>
+  </div>
+  <?php include_once('rodape.php'); ?>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

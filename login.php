@@ -17,7 +17,7 @@ if (isset($_POST['login'])) {
             $usuario = mysqli_fetch_array($resultado);
             if (password_verify($senha, $usuario['senha'])) {
                 session_start();
-                $_SESSION["id"] = $usuario["id_usuario"];
+                $_SESSION["id_usuario"] = $usuario["id_usuario"];
                 $_SESSION["email"] = $usuario["email"];
                 header("Location: index.php");
             } else {
@@ -38,8 +38,10 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/stylelogin.css">
+    <!--<link rel="stylesheet" href="./assets/css/bootstrap.css">-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="assests/style/stylelogin.css" rel="stylesheet" media="screen">
+    <link rel="shortcut icon" href="./assets/livro.png" type="image/x-icon">
     <title> Login | Biblioteca Jurídica </title>
 </head>
 
