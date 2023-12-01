@@ -3,19 +3,19 @@ require_once "conexao.php";
 
 $conecta = conectar();
 
-$id = $_GET['editar'];
+$id = $_POST['editar'];
 
-$sql = "SELECT * FROM usuarios WHERE codusuario=" . $id;
+$sql = "SELECT * FROM usuario WHERE id_usuario=" . $id;
 $resultado = mysqli_query($conecta, $sql);
 $dados = mysqli_fetch_assoc($resultado);
 if (isset($_POST['editar'])) {
-    $id= $_POST ['codusuario'];
+    $id= $_POST ['id_usuario'];
     $nome= $_POST ['nome'];
     $cpf= $_POST ['cpf'];
     $email= $_POST ['email'];
     $senha= $_POST ['senha'];
 
-    $sql = "UPDATE usuarios SET nome='$nome', cpf='$cpf', email='$email', senha='$senha' WHERE codusuario=$id";
+    $sql = "UPDATE usuario SET nome='$nome', cpf='$cpf', email='$email', senha='$senha' WHERE id_usuario=$id";
     mysqli_query($conecta, $sql);
 
 }
@@ -29,24 +29,13 @@ if (isset($_POST['editar'])) {
     <title>Editar</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm bg-white pb-2">
-            <div class="container border-bottom p-1 mb-2">
-                <img src="./assets/favicon.png" class="navbar-brand me-3" width="50" height="auto">
-                <ul class="navbar-nav text-end">
-                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-secondary" href="cadastra.php">Cadastrar</a></li>
-                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-secondary" href="login.php">Login</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
     <hr>
     <div class="container">
         <h2>Editar usuario</h2>
         <div class="row">
             <form method= "post"> 
                  <font face="Arial">
-                 <input type="hidden" name="codusuario" value="<?php echo $id; ?>" />
+                 <input type="hidden" name="id_usuario" value="<?php echo $id; ?>" />
                  <div class="form-group">
                  <label>Nome: </label> 
                  <input type="text" name="nome" value="<?php echo $dados['nome']; ?>"><br><br>
