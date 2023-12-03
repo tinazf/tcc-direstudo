@@ -7,7 +7,7 @@ $conecta = conectar();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assests/style/stylecad.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="./assets/css/stylecad.css">
     <title>Entrar | Biblioteca Jurídica </title>
 <body>
     <div class="wrapper">
@@ -33,7 +33,7 @@ $conecta = conectar();
             <div class="button">  
             <button class="btn btn-warning" data-toggle="modal" data-target="#modalExemplo" type="submit" name="cadastrar"> Cadastrar </button>
     </div> 
-    <!-- Modal -->
+    <!-- ainda sem funcionalidade
 <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -53,8 +53,7 @@ $conecta = conectar();
       </div>
     </div>
   </div>
-</div>
-        
+</div> -->
 </form>
 </div>
 </body>

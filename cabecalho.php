@@ -25,7 +25,7 @@
         <a href="index.php" class="text-dark link-body-emphasis text-decoration-none"><img class="navbar-brand me-3" src="" alt="Logo" width="50px" height="auto" style="vertical-align: inherit;">Biblioteca Jurídica</a>
         <ul class="navbar-nav text-end">
           <li class="nav-item"><a class="nav-link link-body-emphasis text-dark" href="login.php">Login</a></li>
-          <li class="nav-item"><a class="nav-link link-body-emphasis text-dark" href="#">Cadastre-se</a></li>
+          <li class="nav-item"><a class="nav-link link-body-emphasis text-dark" href="cadastrar.php">Cadastre-se</a></li>
         </ul>
       </div>
     </nav>

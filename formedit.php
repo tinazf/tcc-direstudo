@@ -1,23 +1,30 @@
 <?php
 require_once "conexao.php";
-
 $conecta = conectar();
-
 $id = $_POST['editar'];
-
+if (isset($_POST['editar'])){
 $sql = "SELECT * FROM usuario WHERE id_usuario=" . $id;
-$resultado = mysqli_query($conecta, $sql);
+$stmt = mysqli_prepare($conecta, $sql);
+mysqli_stmt_bind_param($stmt, "i", $id);
+mysqli_stmt_execute($stmt);
+$resultado = mysqli_stmt_get_result($stmt);
+
+if (!$resultado) {
+    die('Erro na consulta: ' . mysqli_error($conecta));
+}
 $dados = mysqli_fetch_assoc($resultado);
-if (isset($_POST['editar'])) {
+if (isset($_POST ['id_usuario'],$_POST ['nome'], $_POST ['cpf'], $_POST ['email'], $_POST ['senha'] )) {
     $id= $_POST ['id_usuario'];
     $nome= $_POST ['nome'];
     $cpf= $_POST ['cpf'];
     $email= $_POST ['email'];
     $senha= $_POST ['senha'];
 
-    $sql = "UPDATE usuario SET nome='$nome', cpf='$cpf', email='$email', senha='$senha' WHERE id_usuario=$id";
-    mysqli_query($conecta, $sql);
-
+    $sql = "UPDATE usuario SET nome='$nome', cpf='$cpf', email='$email', senha='$senha' WHERE id_usuario=" . $id;
+    $stmt = mysqli_prepare($conecta, $sql);
+    mysqli_stmt_bind_param($stmt, $nome, $cpf, $email, $senha, $id);
+    mysqli_stmt_execute($stmt);
+}
 }
 ?>
 <!DOCTYPE html>
@@ -38,22 +45,22 @@ if (isset($_POST['editar'])) {
                  <input type="hidden" name="id_usuario" value="<?php echo $id; ?>" />
                  <div class="form-group">
                  <label>Nome: </label> 
-                 <input type="text" name="nome" value="<?php echo $dados['nome']; ?>"><br><br>
+                 <input type="text" name="editar" value="<?php echo $dados['nome']; ?>"><br><br>
                  </div>
 
                  <div class="form-group">
                  <label>Seu CPF: </label> 
-                <input type="cpf" name="cpf"  value="<?php echo $dados['cpf']; ?>"><br><br>
+                <input type="cpf" name="editar"  value="<?php echo $dados['cpf']; ?>"><br><br>
                 </div>
                 
                 <div class="form-group">
                 <label>Informe um e-mail válido: </label>
-                  <input type="text" name="email" value="<?php echo $dados['email']; ?>" required="required"><br><br>
+                  <input type="text" name="editar" value="<?php echo $dados['email']; ?>" required="required"><br><br>
                 </div>
 
                 <div class="form-group">
                 <label>Senha: </label>
-                 <input type="password" name="senha" value="<?php echo $dados['senha']; ?>"><br><br>
+                 <input type="password" name="editar" value="<?php echo $dados['senha']; ?>"><br><br>
                 </div>
                  <div class="form-group">
                     <button class="btn btn-primary" type="submit" name="editar"> Salvar edição</button>
