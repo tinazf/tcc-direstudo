@@ -3,7 +3,7 @@
     <header style="background-color: gold">
       <nav class="navbar navbar-expand-sm">
         <div class="container p-1 mb-2">
-          <a class="text-dark link-body-emphasis text-decoration-none" href="index.php"><img src="" alt="Logo" width="auto" height="50px" class="navbar-brand me-3">Biblioteca Jurídica</a>
+          <a class="text-dark link-body-emphasis text-decoration-none" href="index.php"><img src="./assets/Logo_branco.png" alt="Logo" width="120px" height="auto" class="navbar-brand me-3"></img></a>
         <ul class="navbar-nav">
           <li class="nav-link"><a class="nav-link text-dark link-body-emphasis" href="#">Conteúdo</a></li>
         </ul>
@@ -22,7 +22,7 @@
   <header class="row">
     <nav class="navbar navbar-expand-sm" style="background-color: gold;">
       <div class="container p-1 mb-2">
-        <a href="index.php" class="text-dark link-body-emphasis text-decoration-none"><img class="navbar-brand me-3" src="" alt="Logo" width="50px" height="auto" style="vertical-align: inherit;">Biblioteca Jurídica</a>
+        <a href="index.php" class="text-dark link-body-emphasis text-decoration-none"><img class="navbar-brand me-3" src="./assets/Logo_branco.png" alt="Logo" width="120px" height="auto" style="vertical-align: inherit;"></img></a>
         <ul class="navbar-nav text-end">
           <li class="nav-item"><a class="nav-link link-body-emphasis text-dark" href="login.php">Login</a></li>
           <li class="nav-item"><a class="nav-link link-body-emphasis text-dark" href="cadastrar.php">Cadastre-se</a></li>

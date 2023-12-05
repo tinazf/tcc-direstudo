@@ -46,6 +46,9 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
+    <div class="col">
+        <img src="./assets/Logo_branco.png" alt="Logo" width="500px" height="auto" class="navbar-brand" style="margin-right: 120px;margin-top : 30px;"></img>
+    </div>
     <div class="wrapper">
         <form method="post">
             <h1>Login</h1>
