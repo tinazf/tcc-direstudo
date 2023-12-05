@@ -55,11 +55,13 @@ if (isset($_POST['buscar'])) {
       <div class="col-xl-3">
         <div class="card ms-5" style="width: 13rem;">
           <a href="" class="link-body-emphasis text-dark text-decoration-none">
-            <img src="assets/book.png" class="card-img-top" alt="...">
+            <img src="assets/imgCategorias/contratoEmpres..jpeg" class="card-img-top" alt="...">
+            <span class="border border-info">
             <div class="card-body text-center">
               <h5 class="card-title">Contrato Empresarial</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
+            </span>
           </a>
         </div>
       </div>
