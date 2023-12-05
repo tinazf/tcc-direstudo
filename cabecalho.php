@@ -24,8 +24,8 @@
       <div class="container p-1 mb-2">
         <a href="index.php" class="text-dark link-body-emphasis text-decoration-none"><img class="navbar-brand me-3" src="./assets/Logo_branco.png" alt="Logo" width="120px" height="auto" style="vertical-align: inherit;"></img></a>
         <ul class="navbar-nav text-end">
-          <li class="nav-item"><a class="nav-link link-body-emphasis text-dark" href="login.php">Login</a></li>
-          <li class="nav-item"><a class="nav-link link-body-emphasis text-dark" href="cadastrar.php">Cadastre-se</a></li>
+          <h5><li class="nav-item"><a class="nav-link link-body-emphasis text-dark" href="login.php">Login</a></li></h5>
+          <h5><li class="nav-item"><a class="nav-link link-body-emphasis text-dark" href="cadastrar.php">Cadastre-se</a></li></h5>
         </ul>
       </div>
     </nav>

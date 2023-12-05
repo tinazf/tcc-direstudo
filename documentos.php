@@ -44,15 +44,20 @@ $conecta = conectar();
       <label for="categoria">Categoria</label>
       <select id="categoria" class="form-control">
         <option selected>Selecione uma categoria</option>
-        <option>Contrato Empresárial</option>
-        <option>Direito</option>
-        <option>Etica</option>
-        <option>Estatuto Da Criança e Adolescente</option>
-        <option>Processo</option>
-        <option>Processo Civil</option>
-        <option>Processo Trabalho</option>
-        <option>Processo Penal</option>
-        <option>Processo Empresarial</option>
+        <select>Contrato Empresárial</select>
+        <select>Direito Constitucional </select>
+        <select>Direito Civil </select>
+        <select>Direito Administrativo </select>
+        <select>Direito Penal </select>
+        <select>Direito Do Trabalho </select>
+        <select>Ética Profissional</select>
+        <select>Estatuto OAB </select>
+        <select>Estatuto Da Criança e Adolescente</select>
+        <select>Processo</select>
+        <select>Processo Civil</select>
+        <select>Processo Trabalho</select>
+        <select>Processo Penal</select>
+        <select>Processo Empresarial</select>
     </select>
   </div>
   <div class="mb-3">

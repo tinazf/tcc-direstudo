@@ -2,24 +2,6 @@
 require_once "conexao.php";
 $conecta = conectar();
 
-/*if (isset($_GET["buscar"])) {
-    $buscar = mysqli_escape_string($conecta, $_GET["barra"]);
-    $sql= "SELECT * FROM documentos WHERE categoria like %$buscar%";
-    $resultado = mysqli_query($conecta,$sql);
-    if (mysqli_num_rows($resultado) > 0) {
-        while ($dados = mysqli_fetch_assoc($resultado)){ ?>
-            <div class="p-3 mb-2 bg-light text-dark">
-                <div class="card-body">
-                    <td> <?= ": " . $dados['categoria']; ?> </td><br>
-                    <td>
-                </div>
-        <?php }
-    } else {
-        echo "Nenhum resultado encontrado.";
-    }  
-}   
-*/
-
 if (isset($_POST['cadastrar'])) {
     $nome = $_POST['nome'];
     $cpf = $_POST['cpf'];

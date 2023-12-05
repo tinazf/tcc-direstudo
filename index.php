@@ -37,15 +37,37 @@ if (isset($_POST['buscar'])) {
   <div class="container">
     <div class="row m-4">
       <div class="float-left">
-        <form method="POST" action="<?= $_SERVER['PHP_SELF']; ?>" class="form-inline">
-          <div class="input-group mt-3 mx-auto shadow" style="width: 35%;">
-            <input class="form-control text-center" name="barra" type="search" aria-label="Search" id="categoria" placeholder="Pesquise por uma categoria">
-            <div class="input-group-append">
-              <button class="btn btn-success" name="buscar" type="submit">
+      <form method="GET" action="" class="form-inline">
+    <div class="input-group mt-3 mx-auto shadow" style="width: 35%;">
+        <input class="form-control text-center" name="barra" type="search" aria-label="Search" id="categoria" placeholder="Pesquise por uma categoria">
+        <div class="input-group-append">
+            <button class="btn btn-success" name="buscar" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                 </svg> Buscar
-              </button>
+            </button>
+        </div>
+    </div>
+</form>
+
+<?php 
+if (isset($_GET["buscar"])) {
+    $buscar = mysqli_escape_string($conecta, $_GET["barra"]);
+    $sql = "SELECT * FROM documento WHERE categoria LIKE '%$buscar%'";
+    $resultado = mysqli_query($conecta, $sql);
+
+    if (mysqli_num_rows($resultado) > 0) {
+        while ($dados = mysqli_fetch_assoc($resultado)) { 
+            echo '<div class="p-3 mb-2 bg-light text-dark">';
+            echo '<div class="card-body">';
+            echo '<td>: ' . $dados['categoria'] . '</td><br>';
+        }
+    } else {
+        echo "Nenhum resultado encontrado.";
+    }  
+}
+?>
+
             </div>
           </div>
         </form>
@@ -56,22 +78,10 @@ if (isset($_POST['buscar'])) {
         <div class="card ms-5" style="width: 13rem;">
           <a href="" class="link-body-emphasis text-dark text-decoration-none">
             <img src="assets/imgCategorias/contratoEmpres..jpeg" class="card-img-top" alt="...">
-            <span class="border border-info">
             <div class="card-body text-center">
               <h5 class="card-title">Contrato Empresarial</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            </span>
-          </a>
-        </div>
-      </div>
-      <div class="col-xl-3">
-        <div class="card ms-5" style="width: 13rem;">
-          <a href="" class="link-body-emphasis text-dark text-decoration-none">
-            <img src="assets/book.png" class="card-img-top" alt="...">
-            <div class="card-body text-center">
-              <h5 class="card-title">Contrato Empresarial</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text"> Aqui são encontrados acordos legais entre empresas ou empresários individuais, 
+                estabelecendo obrigações e direitos relativos a atividades comerciais e transações comerciais.</p>
             </div>
           </a>
         </div>
@@ -79,10 +89,10 @@ if (isset($_POST['buscar'])) {
       <div class="col-xl-3">
         <div class="card ms-5" style="width: 13rem;">
           <a href="" class="link-body-emphasis text-dark text-decoration-none">
-            <img src="assets/book.png" class="card-img-top" alt="...">
+            <img src="assets/imgCategorias/direitoConstitucional.jpg" class="card-img-top" alt="...">
             <div class="card-body text-center">
-              <h5 class="card-title">Contrato Empresarial</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">Direito Constitucional</h5>
+              <p class="card-text">Nessa categoria são encontrados documentos referentes a interpretação e analisase do cumprimento da constituição do país</p>
             </div>
           </a>
         </div>
@@ -90,9 +100,20 @@ if (isset($_POST['buscar'])) {
       <div class="col-xl-3">
         <div class="card ms-5" style="width: 13rem;">
           <a href="" class="link-body-emphasis text-dark text-decoration-none">
-            <img src="assets/book.png" class="card-img-top" alt="...">
+            <img src="assets/imgCategorias/direitoCivil.jpg" class="card-img-top" alt="...">
             <div class="card-body text-center">
-              <h5 class="card-title">Contrato Empresarial</h5>
+              <h5 class="card-title">Direito Civil </h5>
+              <p class="card-text">Essa categoria trata das relações e direitos entre indivíduos, onde se trata de contratos, responsabilidade civil, propriedade, família e sucessões</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="card ms-5" style="width: 13rem;">
+          <a href="" class="link-body-emphasis text-dark text-decoration-none">
+            <img src="assets/imgCategorias/direitoAdministrativo.jpg" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Direito Administrativo</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </a>
