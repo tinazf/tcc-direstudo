@@ -31,7 +31,7 @@ if (isset($_POST['editar'])) {
     <title>Perfil Usuário</title>
 </head>
 <body>
-
+<button type="button" href="index.php" class="btn btn-link">Voltar para a tela inicial</button>
 <div class="profile-container">
     <h1>Perfil</h1>
     <h2>Editar informações do usuário</h2>
@@ -63,8 +63,7 @@ if (isset($_POST['editar'])) {
                     <button class="button" onclick="confirmEdit()" type="submit" name="editar">Salvar edição</button>
                 </div>
             </form>
-
-    <br><br><button class="delete-button" onclick="confirmDelete()">Excluir Perfil</button>
+    <br><br><button class="delete-button" onclick="confirmDelete()"><a href="deletar.php?deletar=<?php echo $dados['id_usuario']; ?>">Excluir Perfil</a></button>
 </div>
 <script>
     function confirmEdit() {

@@ -46,8 +46,9 @@ $conecta = conectar();
             </div>
           </div>
         </form>
-
-        <?php
+       <?php if (isset($_SESSION['id_usuario'])) { ?>
+      <a href="documentos.php?id_usuario=<?= $_SESSION['id_usuario']; ?>"><button type="button" href="documentos.php" class="btn btn-outline-info"> Cadastrar Documento</button></a>
+      <?php } 
         if (isset($_GET["buscar"])) {
           $buscar = mysqli_escape_string($conecta, $_GET["barra"]);
           $sql = "SELECT * FROM documento WHERE categoria LIKE '%$buscar%'";
