@@ -6,7 +6,7 @@
  font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+.fundo{
     display: flex;
     color:black;
     justify-content: right;

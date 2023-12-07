@@ -46,12 +46,9 @@ $conecta = conectar();
             </div>
           </div>
         </form>
-        <?php if (isset($_SESSION['id_usuario'])) { ?>
-          <a href="documentos.php?id_usuario=<?= $_SESSION['id_usuario']; ?>"><button type="button" href="documentos.php" class="btn btn-outline-info p-2"> Cadastrar Documento</button></a>
-          <?php }
-        if (isset($_GET["buscar"])) {
+          <?php if (isset($_GET["buscar"])) {
           $buscar = mysqli_escape_string($conecta, $_GET['barra']);
-          $sql = "SELECT * FROM documento WHERE categoria LIKE '$buscar%'";
+          $sql = "SELECT * FROM categoria WHERE categoria LIKE '%$buscar%'";
           $resultado = mysqli_query($conecta, $sql);
 
           if (mysqli_num_rows($resultado) > 0) {
@@ -62,6 +59,7 @@ $conecta = conectar();
                     <img src="assets/imgCategorias/contratoEmpres..jpg" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                       <h5 class="card-title"><?= $dados['categoria']; ?></h5> 
+                      <p class="card-text"><?= $dados['descricao']; ?></p>
                     </div>
                   </a>
                 </div>

@@ -27,26 +27,20 @@ if (isset($_POST['btn-cadastrar'])){
 	} else {
 		echo mysqli_errno($conecta) . ": " . mysqli_error($conecta);
 	}
+} else if(isset($_POST['editar'])){
+
+} else if(isset($_GET['btn-deletar'])){
+	$id_documento = $_GET['btn-deletar'];
+	$sql1 = "SELECT arquivo FROM documento WHERE id_documento = $id_documento";
+	$result = mysqli_query($conecta, $sql1);
+	$dados = mysqli_fetch_assoc($result);
+	unlink($dados['arquivo']);
+	$sql = "DELETE FROM documento WHERE id_documento = $id_documento";
+	$resultado = mysqli_query($conecta, $sql);
+	if($resultado == true){
+		header("Location: index.php");
+	} else {
+		echo mysqli_errno($conecta) . ": " . mysqli_error($conecta);
+	}
 }
-
-
-
-
-
-/*   if (isset($_GET['btn-deletar'])){
-	   $id_documento = $_GET['btn-deletar'];
-	   $sql1 = "SELECT arquivo FROM documento WHERE id_documento = $id_documento";
-	   $result = mysqli_query($conecta, $sql1);
-	   $dados = mysqli_fetch_assoc($result);
-	   
-	   unlink($dados['arquivo']);
-	   
-	   $sql = "DELETE FROM documento WHERE id_documento = $id_documento";
-	   $resultado = mysqli_query($conecta, $sql);
-	   if($resultado == true){
-		   header("Location: index_admin.php");
-	   } else {
-		   echo mysqli_errno($conecta) . ": " . mysqli_error($conecta);
-	   }
-   }*/
 ?>

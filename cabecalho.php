@@ -5,12 +5,13 @@
         <div class="container p-1 mb-2">
           <a class="text-dark link-body-emphasis text-decoration-none" href="index.php"><img src="./assets/Logo_branco.png" alt="Logo" width="120px" height="auto" class="navbar-brand me-3"></img></a>
         <ul class="navbar-nav">
-          <li class="nav-link"><a class="nav-link text-dark link-body-emphasis" href="#">Conteúdo</a></li>
-        </ul>
+          <li class="nav-link"><a class="nav-link text-dark link-body-emphasis btn btn-outline-light" href="documentos.php?id_usuario=<?= $_SESSION['id_usuario']; ?>">Cadastrar Documento</a></li>
+          <li class="nav-link"><a class="nav-link text-dark link-body-emphasis btn btn-outline-light" href="list_doc.php?id_usuario=<?= $_SESSION['id_usuario']; ?>">Meus Documentos</a></li>
+        </ul> 
         <div class="dropdown">
           <a class="d-block link-body-emphasis text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="perfil.php?id_usuario=<?= $_SESSION['id_usuario']; ?>">Configurações</a></li>
+            <li><a class="dropdown-item" href="perfil.php?id_usuario=<?= $_SESSION['id_usuario']; ?>">Configurar Conta</a></li>
             <li><a class="dropdown-item" href="logout.php">Sair</a></li>
           </ul>
         </div>

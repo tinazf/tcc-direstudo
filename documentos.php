@@ -1,3 +1,9 @@
+<?php
+include_once('conexao.php');
+$conecta = conectar();
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -9,33 +15,16 @@
   <title>Documentos | Biblioteca Jurídica </title>
 
 <body>
-  <header style="background-color: gold">
-    <nav class="navbar navbar-expand-sm">
-      <div class="container p-1 mb-2">
-        <a class="text-dark link-body-emphasis text-decoration-none" href="index.php"><img src="./assets/Logo_branco.png" alt="Logo" width="120px" height="auto" class="navbar-brand me-3"></img></a>
-        <ul class="navbar-nav">
-          <li class="nav-link"><a class="nav-link text-dark link-body-emphasis" href="lista_doc.php">Documentos cadastrados</a></li>
-        </ul>
-        <div class="dropdown">
-          <a class="d-block link-body-emphasis text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href=".php?id_usuario=<?= $_SESSION['id_usuario']; ?>">Configurações</a></li>
-            <li><a class="dropdown-item" href="logout.php">Sair</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <br><br>
+  <?php include_once('cabecalho.php'); ?>
   <div class="row justify-content-center">
     <div class="col-md-6">
       <h2>Cadastrar um documento</h2>
       <form method="POST" action="create_documento.php" enctype="multipart/form-data">
-        <div class="mb-3">
+        <div class="my-3">
           <label for="nome" class="form-label">Nome do documento</label>
           <input type="text" class="form-control" name="titulo" id="nome" required>
         </div>
-        <div class="mb-3">
+        <div class="my-3">
           <label for="autor" class="form-label">Autor</label>
           <input type="text" class="form-control" name="autor" id="autor" required>
         </div>
@@ -59,7 +48,7 @@
             <option>Processo Empresarial</option>
           </select>
         </div>
-        <div class="mb-3">
+        <div class="my-3">
           <label for="descricao" class="form-label">Descrição</label>
           <textarea class="form-control" rows="4" type="text" name="descricao" id="descricao" required></textarea>
         </div>
@@ -72,3 +61,10 @@
         </div>
         <button type="submit" name="btn-cadastrar" class="btn btn-warning">Cadastrar</button>
     </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
+</html>
