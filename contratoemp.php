@@ -4,7 +4,7 @@ require_once "conexao.php";
 $conecta = conectar();
 $id = $_SESSION['id_usuario'];
 echo "<p>Documentos cadastrados</p>";
-$sql = "SELECT * FROM documento WHERE id_usuario=" . $id;
+$sql = "SELECT * FROM documento WHERE categoria= 'Contrato Empresarial'";
 $resultado = mysqli_query($conecta, $sql);
 while ($dados = mysqli_fetch_assoc($resultado)) :
 ?>

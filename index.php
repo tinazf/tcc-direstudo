@@ -72,7 +72,7 @@ $conecta = conectar();
           <div class="row py-2 mt-3">
             <div class="col-xl-3">
               <div class="card ms-5" style="width: 13rem;">
-                <a href="" class="link-body-emphasis text-dark text-decoration-none">
+                <a href="contratoemp.php" class="link-body-emphasis text-dark text-decoration-none">
                   <img src="assets/imgCategorias/contratoEmpres..jpg" class="card-img-top" alt="...">
                   <div class="card-body text-center">
                     <h5 class="card-title">Contrato Empresarial</h5>

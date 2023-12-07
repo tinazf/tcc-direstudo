@@ -23,7 +23,8 @@ if (isset($_POST['btn-cadastrar'])){
     VALUES ('$id_usuario', '$titulo', '$categoria', '$autor', '$descricao', '$documento')";
 	$resultado = mysqli_query($conecta, $sql);
 	if($resultado == TRUE){
-		echo "Deu certo";
+		echo "Documento Cadastrado";	
+		header("Location: documentos.php.php");	
 	} else {
 		echo mysqli_errno($conecta) . ": " . mysqli_error($conecta);
 	}
