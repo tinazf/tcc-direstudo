@@ -24,7 +24,8 @@ if (isset($_POST['btn-cadastrar'])){
 	$resultado = mysqli_query($conecta, $sql);
 	if ($resultado == true) {
         echo "<script> alert ('Documento cadastrado com sucesso!'); </script>";
-        echo " <script> location.href='lista_doc .php'; </script>";
+        echo " <script> location.href='create_documento.php'; </script>";
+		header("Location: lista_doc.php");
     } else {
 		echo mysqli_errno($conecta) . ": " . mysqli_error($conecta);
 	}
@@ -39,7 +40,7 @@ if (isset($_POST['btn-cadastrar'])){
 	$sql = "DELETE FROM documento WHERE id_documento = $id_documento";
 	$resultado = mysqli_query($conecta, $sql);
 	if($resultado == true){
-		header("Location: index.php");
+		header("Location: lista_doc.php");
 	} else {
 		echo mysqli_errno($conecta) . ": " . mysqli_error($conecta);
 	}
