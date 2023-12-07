@@ -6,7 +6,7 @@
           <a class="text-dark link-body-emphasis text-decoration-none" href="index.php"><img src="./assets/Logo_branco.png" alt="Logo" width="120px" height="auto" class="navbar-brand me-3"></img></a>
         <ul class="navbar-nav">
           <li class="nav-link"><a class="nav-link text-dark link-body-emphasis btn btn-outline-light" href="documentos.php?id_usuario=<?= $_SESSION['id_usuario']; ?>">Cadastrar Documento</a></li>
-          <li class="nav-link"><a class="nav-link text-dark link-body-emphasis btn btn-outline-light" href="list_doc.php?id_usuario=<?= $_SESSION['id_usuario']; ?>">Meus Documentos</a></li>
+          <li class="nav-link"><a class="nav-link text-dark link-body-emphasis btn btn-outline-light" href="lista_doc.php?id_usuario=<?= $_SESSION['id_usuario']; ?>">Meus Documentos</a></li>
         </ul> 
         <div class="dropdown">
           <a class="d-block link-body-emphasis text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>

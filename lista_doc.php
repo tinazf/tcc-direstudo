@@ -18,7 +18,7 @@ while ($dados = mysqli_fetch_assoc($resultado)) :
             <td>
         </div>
 <div class="form-group">
-    <button type="button" class="card-link m-2 btn btn-outline-danger text-dark"><a href="deletar.php?deletar=<?php echo $dados['codusuario']; ?>">Excluir</a></button>
+    <button type="button" class="card-link m-2 btn btn-outline-danger text-dark"><a href="deletar.php?deletar=<?php echo $dados['id_usuario']; ?>">Excluir</a></button>
 </div>
 </div>
 </td>
