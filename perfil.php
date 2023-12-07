@@ -1,6 +1,7 @@
 <?php
 require_once "conexao.php";
 $conecta = conectar();
+session_start();
 
 if (isset($_POST['editar'])) {
     if (isset($_POST['id_usuario'], $_POST['nome'], $_POST['cpf'], $_POST['email'], $_POST['senha'])) {
@@ -11,18 +12,19 @@ if (isset($_POST['editar'])) {
         $senha = $_POST['senha'];
         $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
 
-        $sql = "UPDATE usuario SET nome='$nome', cpf='$cpf', email='$email', senha='$senha_cript' WHERE id_usuario=" . $id;
+        $sql = "UPDATE usuario SET nome='$nome', cpf='$cpf', email='$email', senha='$senha_cript' WHERE id_usuario =" . $id;
         $resultado = mysqli_query($conecta, $sql);
         if ($resultado == true) {
             echo "<script> alert (Edição salva!'); </script>";
             echo "<script> location.href='perfil.php'; </script>";
+            header("Location: perfil.php?editar=$id");
         }
     }
-} 
-if(isset($_GET['id_usuario'])){
-    $id = $_GET['id_usuario'];
+}
+if (isset($_GET['editar'])) {
+    $id = $_GET['editar'];
 } else {
-    $id = $_POST['id_usuario'];
+    $id = $_GET['editar'];
 }
 $sql = "SELECT * FROM usuario WHERE id_usuario=" . $id;
 $resultado = mysqli_query($conecta, $sql);
@@ -93,7 +95,8 @@ if (!$resultado) {
                 if (isset($_GET['deletar'])) {
                     $id = $_GET['deletar'];
                     <?php //$sql = "DELETE FROM usuario WHERE id_usuario =". $id;
-                    // mysqli_query($conecta, $sql); ?>
+                    // mysqli_query($conecta, $sql); 
+                    ?>
                     alert("Perfil excluído com sucesso!");
                     // Redirecionar para a página inicial ou fazer qualquer outra ação necessária após a exclusão.
                 } else {
@@ -103,7 +106,8 @@ if (!$resultado) {
             }
         }
     </script>-->
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 
 </html>

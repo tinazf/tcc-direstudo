@@ -11,7 +11,7 @@
         <div class="dropdown">
           <a class="d-block link-body-emphasis text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="perfil.php?id_usuario=<?= $_SESSION['id_usuario']; ?>">Configurar Conta</a></li>
+            <li><a class="dropdown-item" href="perfil.php?editar=<?= $_SESSION['id_usuario']; ?>">Configurar Conta</a></li>
             <li><a class="dropdown-item" href="logout.php">Sair</a></li>
           </ul>
         </div>
