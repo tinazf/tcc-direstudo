@@ -13,6 +13,10 @@ if (isset($_POST['editar'])) {
 
         $sql = "UPDATE usuario SET nome='$nome', cpf='$cpf', email='$email', senha='$senha_cript' WHERE id_usuario=" . $id;
         $resultado = mysqli_query($conecta, $sql);
+        if ($resultado == true) {
+            echo "<script> alert (Edição salva!'); </script>";
+            echo "<script> location.href='perfil.php'; </script>";
+        }
     }
 } 
 if(isset($_GET['id_usuario'])){
@@ -40,7 +44,7 @@ if (!$resultado) {
 
 <body>
     <?php include_once('cabecalho.php'); ?>
-    <button type="button" href="index.php" class="btn btn-link">Voltar para a tela inicial</button>
+    <a><button type="button" href="index.php" class="btn btn-link">Voltar para a tela inicial</button></a>
     <div class="container">
         <div class="row">
             <div class="col-xl-12">

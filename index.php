@@ -120,9 +120,20 @@ $conecta = conectar();
             <div class="col-xl-3">
               <div class="card ms-5" style="width: 13rem;">
                 <a href="" class="link-body-emphasis text-dark text-decoration-none">
-                  <img src="assets/book.png" class="card-img-top" alt="...">
+                  <img src="assets/imgCategorias/direitoPenal.jpg" class="card-img-top" alt="...">
                   <div class="card-body text-center">
-                    <h5 class="card-title">Contrato Empresarial</h5>
+                    <h5 class="card-title">Direito Penal</h5>
+                    <p class="card-text">.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-3">
+              <div class="card ms-5" style="width: 13rem;">
+                <a href="" class="link-body-emphasis text-dark text-decoration-none">
+                  <img src="assets/imgCategorias/direitoTrabalho.jpg" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Direito do Trabalho</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </a>
@@ -131,20 +142,9 @@ $conecta = conectar();
             <div class="col-xl-3">
               <div class="card ms-5" style="width: 13rem;">
                 <a href="" class="link-body-emphasis text-dark text-decoration-none">
-                  <img src="assets/book.png" class="card-img-top" alt="...">
+                  <img src="assets/imgCategorias/eticaProfissional.jpg" class="card-img-top" alt="...">
                   <div class="card-body text-center">
-                    <h5 class="card-title">Contrato Empresarial</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-xl-3">
-              <div class="card ms-5" style="width: 13rem;">
-                <a href="" class="link-body-emphasis text-dark text-decoration-none">
-                  <img src="assets/book.png" class="card-img-top" alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Contrato Empresarial</h5>
+                    <h5 class="card-title">Ética Profissional</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </a>

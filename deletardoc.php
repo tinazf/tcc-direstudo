@@ -7,6 +7,6 @@ if (isset($_GET['deletar'])) {
 
     $sql = "DELETE FROM documento WHERE id_usuario = $id";
     mysqli_query($conecta, $sql);
-    include_once("logout.php");
+    header("Location: lista_doc.php");
 }
 ?>

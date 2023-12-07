@@ -13,10 +13,12 @@ if (isset($_POST['cadastrar'])) {
             VALUES ('$nome','$cpf', '$email', '$senha_hash')";
     $resultado = mysqli_query($conecta, $sql);
     if ($resultado == true) {
-        echo "Usuário cadastrado com sucesso!";
-        header("Location: login.php");
+        echo "<script> alert ('Usuário cadastrado com sucesso!'); </script>";
+        echo " <script> location.href='login.php'; </script>";
     } else {
-        echo "Erro ao cadastrar" . mysqli_error($conecta);
+        echo "<script> alert ('Erro ao Cadastrar Usuário!'); </script>";
+        echo " <script> location.href='login.php'; </script>";
+        //echo "Erro ao cadastrar" . mysqli_error($conecta);
     }
 }
 

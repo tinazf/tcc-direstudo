@@ -22,10 +22,10 @@ if (isset($_POST['btn-cadastrar'])){
 	$sql = "INSERT INTO documento (id_usuario, titulo, categoria, autor, descricao, arquivo) 
     VALUES ('$id_usuario', '$titulo', '$categoria', '$autor', '$descricao', '$documento')";
 	$resultado = mysqli_query($conecta, $sql);
-	if($resultado == TRUE){
-		echo "Documento Cadastrado";	
-		header("Location: documentos.php.php");	
-	} else {
+	if ($resultado == true) {
+        echo "<script> alert ('Documento cadastrado com sucesso!'); </script>";
+        echo " <script> location.href='lista_doc .php'; </script>";
+    } else {
 		echo mysqli_errno($conecta) . ": " . mysqli_error($conecta);
 	}
 } else if(isset($_POST['editar'])){
