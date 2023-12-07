@@ -30,11 +30,11 @@ $conecta = conectar();
 </head>
 
 <body>
-  <?php require_once "cabecalho.php"; ?>
+  <?php include_once("cabecalho.php"); ?>
   <div class="container">
     <div class="row m-4">
       <div class="float-left">
-        <form method="GET" action="" class="form-inline">
+        <form method="GET" action="<?= $_SERVER['PHP_SELF'] ?> " class="form-inline">
           <div class="input-group mt-3 mx-auto shadow" style="width: 35%;">
             <input class="form-control text-center" name="barra" type="search" aria-label="Search" id="categoria" placeholder="Pesquise por uma categoria">
             <div class="input-group-append">
@@ -46,20 +46,27 @@ $conecta = conectar();
             </div>
           </div>
         </form>
-       <?php if (isset($_SESSION['id_usuario'])) { ?>
-      <a href="documentos.php?id_usuario=<?= $_SESSION['id_usuario']; ?>"><button type="button" href="documentos.php" class="btn btn-outline-info"> Cadastrar Documento</button></a>
-      <?php } 
+        <?php if (isset($_SESSION['id_usuario'])) { ?>
+          <a href="documentos.php?id_usuario=<?= $_SESSION['id_usuario']; ?>"><button type="button" href="documentos.php" class="btn btn-outline-info p-2"> Cadastrar Documento</button></a>
+          <?php }
         if (isset($_GET["buscar"])) {
-          $buscar = mysqli_escape_string($conecta, $_GET["barra"]);
-          $sql = "SELECT * FROM documento WHERE categoria LIKE '%$buscar%'";
+          $buscar = mysqli_escape_string($conecta, $_GET['barra']);
+          $sql = "SELECT * FROM documento WHERE categoria LIKE '$buscar%'";
           $resultado = mysqli_query($conecta, $sql);
 
           if (mysqli_num_rows($resultado) > 0) {
-            while ($dados = mysqli_fetch_assoc($resultado)) {
-              echo '<div class="p-3 mb-2 bg-light text-dark">';
-              echo '<div class="card-body">';
-              echo '<td>: ' . $dados['categoria'] . '</td><br>';
-            }
+            while ($dados = mysqli_fetch_assoc($resultado)) { ?>
+              <div class="col-xl-3">
+                <div class="card ms-5" style="width: 13rem;">
+                  <a href="visualizar_categoria.php" class="link-body-emphasis text-dark text-decoration-none">
+                    <img src="assets/imgCategorias/contratoEmpres..jpg" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                      <h5 class="card-title"><?= $dados['categoria']; ?></h5> 
+                    </div>
+                  </a>
+                </div>
+              </div>
+          <?php }
           } else {
             echo "Nenhum resultado encontrado.";
           }

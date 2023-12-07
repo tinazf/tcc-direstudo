@@ -16,7 +16,7 @@ if (isset($_POST['cadastrar'])) {
         echo "Usuário cadastrado com sucesso!";
         header("Location: login.php");
     } else {
-        echo "erro ao cadastrar" . mysqli_error($conecta);
+        echo "Erro ao cadastrar" . mysqli_error($conecta);
     }
 }
 

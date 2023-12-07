@@ -27,8 +27,6 @@ if (isset($_POST['login'])) {
             echo "Email ou senha incorretos";
         }
     }
-    echo "Senha digitada: " . $senha;
-    echo "Senha do banco de dados: " . $usuario['senha'];
 }
 ?>
 <!DOCTYPE html>
@@ -50,7 +48,7 @@ if (isset($_POST['login'])) {
         <img src="./assets/Logo_branco.png" alt="Logo" width="500px" height="auto" class="navbar-brand" style="margin-right: 120px;margin-top : 30px;"></img>
     </div>
     <div class="wrapper">
-        <form method="post">
+        <form method="POST" action="<?= $_SERVER['PHP_SELF'] ?> ">
             <h1>Login</h1>
             <div class="input-box">
                 <i class='bx bxs-user-circle'><label> Email </label></i>
@@ -65,11 +63,9 @@ if (isset($_POST['login'])) {
             </div>
             <div class="register-link">
                 <br>
-                <p> Não possui cadastrado? <a href="cadastrar.php"> cadastrar</a></p>
+                <p> Não possui cadastrado? <a href="cadastrar.php">Cadastre-se</a></p>
             </div>
-    </div>
-
-    </form>
+        </form>
     </div>
 </body>
 
